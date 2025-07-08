@@ -1,0 +1,25 @@
+{
+  "name": "racqsolar-estimator-form-packages-v3",
+  "version": "1.0.0",
+  "description": "RACQ Solar Package Selection Component v3 for WeWeb",
+  "main": "src/wwElement.vue",
+  "scripts": {
+    "build": "weweb build",
+    "serve": "weweb serve"
+  },
+  "author": "RACQ Solar",
+  "license": "Private",
+  "type": "ww-element",
+  "wewebPublic": "public",
+  "keywords": [
+    "weweb",
+    "component",
+    "racq",
+    "solar",
+    "form"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@weweb/cli": "latest"
+  }
+}
