@@ -82,9 +82,9 @@
                 </div>
 
                 <!-- Pricing Section (if enabled) -->
-                <div v-if="content.showPricing && pkg.base_price" class="pricing-section-horizontal">
+                <div v-if="content.showPricing && (pkg.purchase_price || pkg.base_price)" class="pricing-section-horizontal">
                   <span class="price-label">Indicative Investment</span>
-                  <span class="price-value">{{ formatPrice(pkg.base_price) }}</span>
+                  <span class="price-value">{{ formatPrice(pkg.purchase_price || pkg.base_price) }}</span>
                 </div>
 
                 <!-- Selection Button -->
@@ -153,6 +153,7 @@
  * v37 Deployment - July 7, 2025
  * 
  * CHANGES IN THIS VERSION:
+ * - Updated to use purchase_price instead of base_price for accurate pricing display
  * - Horizontal layout for better comparison
  * - Removed hardware icons for cleaner look
  * - Simplified component display to match quote format
@@ -307,6 +308,7 @@ export default {
         systemType: pkg.system_type,
         systemSize: pkg.system_size_kw,
         basePrice: pkg.base_price,
+        purchasePrice: pkg.purchase_price,
         tagline: pkg.tagline,
         components: pkg.components,
         timestamp: new Date().toISOString()
@@ -384,6 +386,7 @@ export default {
           systemType: recommendedPackage.system_type,
           systemSize: recommendedPackage.system_size_kw,
           basePrice: recommendedPackage.base_price,
+          purchasePrice: recommendedPackage.purchase_price,
           tagline: recommendedPackage.tagline,
           components: recommendedPackage.components
         },
